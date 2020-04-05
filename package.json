@@ -38,16 +38,13 @@
         "rpm",
         "tar.gz"
       ],
-      "depends": [],
       "category": "Graphics",
-      "packageCategory": "graphics"
+      "packageCategory": "graphics",
+      "icon": "https://raw.githubusercontent.com/evolus/pencil/master/build/icon.ico"
     },
     "win": {
-      "authors": "Evolus",
-      "owners": "Evolus",
-      "description": "An open-source GUI prototyping tool that is available for ALL platforms.",
-      "copyright": "Copyright © 2008-2016 Evolus. All rights reserved.",
-      "iconUrl": "https://raw.githubusercontent.com/evolus/pencil/master/build/icon.ico",
+      "legalTrademarks": "Copyright © 2008-2016 Evolus. All rights reserved.",
+      "icon": "https://raw.githubusercontent.com/evolus/pencil/master/build/icon.ico",
       "target": "nsis"
     },
     "nsis": {
@@ -73,12 +70,12 @@
     "start:dev": "./node_modules/.bin/electron ./app --enable-dev --enable-transparent-visuals --disable-gpu",
     "start:mac": "./node_modules/.bin/electron ./app --enable-dev",
     "clean": "rimraf dist",
-    "pack": "build",
-    "dist": "build",
-    "release": "build",
-    "dist:linux": "./node_modules/.bin/build --linux --ia32 --x64",
-    "dist:win32": "./node_modules/.bin/build --windows --ia32 --x64",
-    "dist:osx": "./node_modules/.bin/build --macos"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "release": "electron-builder",
+    "dist:linux": "./node_modules/.bin/electron-builder --linux --ia32 --x64",
+    "dist:win32": "./node_modules/.bin/electron-builder --windows --ia32 --x64",
+    "dist:osx": "./node_modules/.bin/electron-builder --macos"
   },
   "private": true
 }
